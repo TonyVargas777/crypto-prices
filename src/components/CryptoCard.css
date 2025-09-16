@@ -1,0 +1,129 @@
+.crypto-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.crypto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.crypto-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.crypto-logo {
+  font-size: 3rem;
+  margin-right: 15px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.crypto-info {
+  flex: 1;
+}
+
+.crypto-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.crypto-symbol {
+  font-size: 1rem;
+  color: #7f8c8d;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.crypto-price {
+  margin-bottom: 15px;
+}
+
+.price {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #2c3e50;
+  display: block;
+}
+
+.crypto-change {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.change-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.change-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.crypto-change.positive {
+  background: rgba(46, 204, 113, 0.1);
+  color: #27ae60;
+  border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+.crypto-change.negative {
+  background: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+  border: 1px solid rgba(231, 76, 60, 0.3);
+}
+
+.crypto-change.neutral {
+  background: rgba(149, 165, 166, 0.1);
+  color: #95a5a6;
+  border: 1px solid rgba(149, 165, 166, 0.3);
+}
+
+.crypto-indicator {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 4px;
+}
+
+.indicator {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px 20px 0 0;
+}
+
+.indicator.positive {
+  background: linear-gradient(90deg, #27ae60, #2ecc71);
+}
+
+.indicator.negative {
+  background: linear-gradient(90deg, #e74c3c, #c0392b);
+}
+
+.indicator.neutral {
+  background: linear-gradient(90deg, #95a5a6, #7f8c8d);
+}
+
