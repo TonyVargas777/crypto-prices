@@ -72,11 +72,7 @@ function App() {
   return (
     <div className="app">
       <header className="header">
-        <h1>💰 Top 20 Criptomonedas</h1>
-        <p>Actualización automática cada 30 segundos</p>
-        <button className="refresh-btn" onClick={fetchCryptoPrices}>
-          🔄 Actualizar
-        </button>
+        <h1>💰 Top 20 Criptomonedas</h1>     
       </header>
       
       <main className="crypto-grid">
