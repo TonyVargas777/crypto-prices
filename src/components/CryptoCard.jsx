@@ -34,12 +34,35 @@ function CryptoCard({ crypto }) {
         <span className="price">{formatPrice(crypto.price)}</span>
       </div>
       
-      <div className={`crypto-change ${getChangeClass(crypto.change24h)}`}>
-        <span className="change-label">24h:</span>
-        <span className="change-value">
-          {crypto.change24h > 0 ? '+' : ''}{formatChange(crypto.change24h)}%
-        </span>
-      </div>
+      <div className="crypto-changes">
+  <div className={`crypto-change ${getChangeClass(crypto.change24h)}`}>
+    <span className="change-label">24h:</span>
+    <span className="change-value">
+      {crypto.change24h > 0 ? '+' : ''}{formatChange(crypto.change24h)}%
+    </span>
+  </div>
+
+  <div className={`crypto-change ${getChangeClass(crypto.change1w)}`}>
+    <span className="change-label">1 Week:</span>
+    <span className="change-value">
+      {crypto.change1w > 0 ? '+' : ''}{formatChange(crypto.change1w)}%
+    </span>
+  </div>
+
+  <div className={`crypto-change ${getChangeClass(crypto.change1m)}`}>
+    <span className="change-label">1 Month:</span>
+    <span className="change-value">
+      {crypto.change1m > 0 ? '+' : ''}{formatChange(crypto.change1m)}%
+    </span>
+  </div>
+
+  <div className={`crypto-change ${getChangeClass(crypto.change1y)}`}>
+    <span className="change-label">1 Year:</span>
+    <span className="change-value">
+      {crypto.change1y > 0 ? '+' : ''}{formatChange(crypto.change1y)}%
+    </span>
+  </div>
+</div>
       
       <div className="crypto-indicator">
         <div className={`indicator ${getChangeClass(crypto.change24h)}`}></div>

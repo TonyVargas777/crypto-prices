@@ -11,7 +11,7 @@ function App() {
     try {
       setLoading(true)
       const response = await fetch(
-        'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false&price_change_percentage=24h'
+        'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false&price_change_percentage=24h,7d,30d,1y'
       )
       
       if (!response.ok) {
@@ -26,6 +26,9 @@ function App() {
         symbol: coin.symbol.toUpperCase(),
         price: coin.current_price,
         change24h: coin.price_change_percentage_24h,
+        change1w: coin.price_change_percentage_7d_in_currency,
+        change1m: coin.price_change_percentage_30d_in_currency,
+        change1y: coin.price_change_percentage_1y_in_currency,  
         image: coin.image // CoinGecko ya trae el logo
       }))
       
