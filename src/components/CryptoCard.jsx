@@ -1,24 +1,24 @@
-import './CryptoCard.css'
+import "./CryptoCard.css";
 
 function CryptoCard({ crypto }) {
   const formatPrice = (price) => {
-    return new Intl.NumberFormat('es-ES', {
-      style: 'currency',
-      currency: 'USD',
+    return new Intl.NumberFormat("es-ES", {
+      style: "currency",
+      currency: "USD",
       minimumFractionDigits: 2,
-      maximumFractionDigits: 6
-    }).format(price)
-  }
+      maximumFractionDigits: 6,
+    }).format(price);
+  };
 
   const formatChange = (change) => {
-    return change?.toFixed(2) || '0.00'
-  }
+    return change?.toFixed(2) || "0.00";
+  };
 
   const getChangeClass = (change) => {
-    if (change > 0) return 'positive'
-    if (change < 0) return 'negative'
-    return 'neutral'
-  }
+    if (change > 0) return "positive";
+    if (change < 0) return "negative";
+    return "neutral";
+  };
 
   return (
     <div className="crypto-card">
@@ -29,46 +29,51 @@ function CryptoCard({ crypto }) {
           <span className="crypto-symbol">{crypto.symbol}</span>
         </div>
       </div>
-      
+
       <div className="crypto-price">
         <span className="price">{formatPrice(crypto.price)}</span>
+        <span className="ath">ATH: {formatPrice(crypto.ath)}</span>
       </div>
-      
+
       <div className="crypto-changes">
-  <div className={`crypto-change ${getChangeClass(crypto.change24h)}`}>
-    <span className="change-label">24h:</span>
-    <span className="change-value">
-      {crypto.change24h > 0 ? '+' : ''}{formatChange(crypto.change24h)}%
-    </span>
-  </div>
+        <div className={`crypto-change ${getChangeClass(crypto.change24h)}`}>
+          <span className="change-label">24h:</span>
+          <span className="change-value">
+            {crypto.change24h > 0 ? "+" : ""}
+            {formatChange(crypto.change24h)}%
+          </span>
+        </div>
 
-  <div className={`crypto-change ${getChangeClass(crypto.change1w)}`}>
-    <span className="change-label">1 Week:</span>
-    <span className="change-value">
-      {crypto.change1w > 0 ? '+' : ''}{formatChange(crypto.change1w)}%
-    </span>
-  </div>
+        <div className={`crypto-change ${getChangeClass(crypto.change1w)}`}>
+          <span className="change-label">1 Week:</span>
+          <span className="change-value">
+            {crypto.change1w > 0 ? "+" : ""}
+            {formatChange(crypto.change1w)}%
+          </span>
+        </div>
 
-  <div className={`crypto-change ${getChangeClass(crypto.change1m)}`}>
-    <span className="change-label">1 Month:</span>
-    <span className="change-value">
-      {crypto.change1m > 0 ? '+' : ''}{formatChange(crypto.change1m)}%
-    </span>
-  </div>
+        <div className={`crypto-change ${getChangeClass(crypto.change1m)}`}>
+          <span className="change-label">1 Month:</span>
+          <span className="change-value">
+            {crypto.change1m > 0 ? "+" : ""}
+            {formatChange(crypto.change1m)}%
+          </span>
+        </div>
 
-  <div className={`crypto-change ${getChangeClass(crypto.change1y)}`}>
-    <span className="change-label">1 Year:</span>
-    <span className="change-value">
-      {crypto.change1y > 0 ? '+' : ''}{formatChange(crypto.change1y)}%
-    </span>
-  </div>
-</div>
-      
+        <div className={`crypto-change ${getChangeClass(crypto.change1y)}`}>
+          <span className="change-label">1 Year:</span>
+          <span className="change-value">
+            {crypto.change1y > 0 ? "+" : ""}
+            {formatChange(crypto.change1y)}%
+          </span>
+        </div>
+      </div>
+
       <div className="crypto-indicator">
         <div className={`indicator ${getChangeClass(crypto.change24h)}`}></div>
       </div>
     </div>
-  )
+  );
 }
 
-export default CryptoCard
+export default CryptoCard;

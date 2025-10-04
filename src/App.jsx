@@ -25,6 +25,7 @@ function App() {
         name: coin.name,
         symbol: coin.symbol.toUpperCase(),
         price: coin.current_price,
+        ath: coin.ath,
         change24h: coin.price_change_percentage_24h,
         change1w: coin.price_change_percentage_7d_in_currency,
         change1m: coin.price_change_percentage_30d_in_currency,
