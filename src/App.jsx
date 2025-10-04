@@ -11,7 +11,7 @@ function App() {
     try {
       setLoading(true)
       const response = await fetch(
-        'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false&price_change_percentage=24h,7d,30d,1y'
+        'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=21&page=1&sparkline=false&price_change_percentage=24h,7d,30d,1y'
       )
       
       if (!response.ok) {
@@ -46,7 +46,7 @@ function App() {
     fetchCryptoPrices()
     
     // Actualizar cada 30 segundos
-    const interval = setInterval(fetchCryptoPrices, 30000)
+    const interval = setInterval(fetchCryptoPrices, 3000000)
     
     return () => clearInterval(interval)
   }, [])
