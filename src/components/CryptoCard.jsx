@@ -31,8 +31,13 @@ function CryptoCard({ crypto }) {
       </div>
 
       <div className="crypto-price">
+        <hr />
         <span className="price">{formatPrice(crypto.price)}</span>
+        <hr />
         <span className="ath">ATH: {formatPrice(crypto.ath)}</span>
+        <br />
+        <span className="market-cap">MC: {formatPrice(crypto.marketCap)}</span>
+        <hr />
       </div>
 
       <div className="crypto-changes">
