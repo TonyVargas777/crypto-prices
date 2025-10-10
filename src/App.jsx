@@ -27,6 +27,7 @@ function App() {
         price: coin.current_price,
         ath: coin.ath,
         marketCap: coin.market_cap,
+        numberOfMarkets: coin.market_cap_rank,
         change24h: coin.price_change_percentage_24h,
         change1w: coin.price_change_percentage_7d_in_currency,
         change1m: coin.price_change_percentage_30d_in_currency,

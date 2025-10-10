@@ -25,8 +25,9 @@ function CryptoCard({ crypto }) {
       <div className="crypto-header">
         <img src={crypto.image} alt={crypto.name} className="crypto-logo" />
         <div className="crypto-info">
-          <h3 className="crypto-name">{crypto.name}</h3>
+          <h3 className="crypto-name">{crypto.name} #{crypto.numberOfMarkets}</h3>
           <span className="crypto-symbol">{crypto.symbol}</span>
+          
         </div>
       </div>
 
